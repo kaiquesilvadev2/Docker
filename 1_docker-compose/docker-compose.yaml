@@ -5,9 +5,8 @@ services:
     image: mysql:8.0
     container_name: wordpress_db
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: wordpress
+    env_file:
+      - db.env
     ports:
       - "3307:3306"
     volumes:
